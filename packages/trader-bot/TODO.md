@@ -1,4 +1,4 @@
-## core
+# TODO
 
 - [x] cycle manager
 - [x] load data strategy
@@ -18,11 +18,3 @@
 - [x] logger
 - [x] config
 - [x] storage
-
-## backend
-
-- [ ] server
-
-## frontend
-
-- [ ] spa

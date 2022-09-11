@@ -10,3 +10,6 @@ node_modules
 
 # app
 dist
+
+# yarn
+yarn-error.log

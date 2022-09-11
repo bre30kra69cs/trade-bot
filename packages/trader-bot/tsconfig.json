@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "target": "ES5",
+    "lib": ["ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["reflect-metadata"]
+  },
+  "include": ["./typings/**/*.d.ts", "src"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@atb/trader-bot",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node -r @swc-node/register src"
+  },
+  "devDependencies": {
+    "@swc-node/register": "^1.5.1",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.245",
+    "@types/node": "^18.7.14",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@spinfi/node": "^2.0.1",
+    "@tonic-foundation/tonic": "^0.1.0",
+    "@tonic-foundation/utils": "^0.1.1",
+    "dotenv": "^16.0.1",
+    "inversify": "^6.0.1",
+    "near-api-js": "^0.45.1",
+    "pino": "^8.4.2",
+    "pino-pretty": "^9.1.0",
+    "reflect-metadata": "^0.1.13",
+    "winston": "^3.8.1"
+  }
+}
