@@ -30,15 +30,19 @@ const createCycleManagerBase = (config: CycleManagerBaseConfig) => {
 
     private timeoutId?: NodeJS.Timer;
 
-    private iteration = () => {
-      clearInterval(this.timeoutId);
-
-      this.timeoutId = setTimeout(async () => {
+    private action = async () => {
+      try {
         const data = await this.dataLoader.load();
         const commands = await this.thinkStrategy.think(data);
         await this.applyStrategy.apply(commands);
-        this.iteration();
-      }, config.interval);
+      } catch (error) {
+        this.logger.error(error);
+      }
+    };
+
+    private iteration = () => {
+      clearInterval(this.timeoutId);
+      this.timeoutId = setTimeout(this.action, config.interval);
     };
 
     start = async () => {

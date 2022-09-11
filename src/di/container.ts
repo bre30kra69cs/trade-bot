@@ -19,7 +19,7 @@ import {ApplyStrategy} from '../applyStrategy/interface';
  * Implementations
  */
 import {AppRoot} from '../app/AppRoot';
-import {LoggerBase} from '../logger/LoggerBase';
+import {LoggerPino} from '../logger/LoggerPino';
 import {CycleManagerBase} from '../cycleManager/CycleManagerBase';
 import {DataLoaderBase} from '../dataLoader/DataLoaderBase';
 import {ConfigEnv} from '../config/ConfigEnv';
@@ -30,7 +30,7 @@ import {ApplyStrategyDummy} from '../applyStrategy/ApplyStrategyDummy';
 
 export const contariner = new Container();
 contariner.bind<App>(Token.App).to(AppRoot);
-contariner.bind<Logger>(Token.Logger).to(LoggerBase);
+contariner.bind<Logger>(Token.Logger).to(LoggerPino);
 contariner.bind<CycleManager>(Token.CycleManager).to(CycleManagerBase);
 contariner.bind<DataLoader>(Token.DataLoader).to(DataLoaderBase);
 contariner.bind<Config>(Token.Config).to(ConfigEnv);

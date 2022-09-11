@@ -1,12 +1,16 @@
 ## core
 
 - [x] cycle manager
-- [-] cycle strategy
 - [x] load data strategy
 - [x] think strategy
+- - [ ] rebalance
 - [x] apply strategy
-- [ ] errors strategy
-- [-] database manager
+- - [ ] rollback
+- - [ ] bundling
+- [ ] catch strategy
+- [ ] data manager
+- - [ ] storage
+- - [ ] db
 - [x] api connector
 - [x] spin api
 - [ ] confirm manager

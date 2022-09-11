@@ -7,7 +7,7 @@ import type {Logger} from '../logger/interface';
 import type {App} from './interface';
 
 @injectable()
-export class AppRoot implements App {
+export class AppRestart implements App {
   @inject(Token.Logger)
   private logger!: Logger;
 
@@ -24,6 +24,8 @@ export class AppRoot implements App {
       await this.cycleManager.start();
     } catch (error) {
       this.logger.error(error);
+      await this.kill();
+      await this.run();
     }
   };
 

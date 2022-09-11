@@ -11,4 +11,8 @@ export class LoggerBase implements Logger {
   warn = () => {
     console.warn('hello');
   };
+
+  error = (error: Error | unknown) => {
+    console.error(error);
+  };
 }

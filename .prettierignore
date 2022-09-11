@@ -1,2 +1,8 @@
+# node
 node_modules
+
+# os
+.DB_store
+
+# app
 dist
