@@ -1,3 +1,5 @@
+import {wait} from './wait.util';
+
 interface FetcherConfig {
   host: string;
 }
@@ -11,9 +13,13 @@ const createFetcher = (config: FetcherConfig) => {
       ...init,
       method: 'get',
       mode: 'cors',
-    }).then((response) => {
-      return response.json();
-    });
+    })
+      .then()
+      .then((response) => {
+        return wait(1000).then(() => {
+          return response.json();
+        });
+      });
   };
 
   return {

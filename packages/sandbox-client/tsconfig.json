@@ -12,6 +12,6 @@
     "isolatedModules": true,
     "jsx": "react"
   },
-  "include": ["./typings/**/*.d.ts", "src"],
+  "include": ["vite.config.ts", "src"],
   "exclude": ["node_modules"]
 }

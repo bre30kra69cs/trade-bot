@@ -10,3 +10,43 @@
   align-items: stretch;
   justify-content: flex-start;
 }
+
+.ColReverse {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.FlexCenter {
+  align-items: center;
+  justify-content: center;
+}
+
+.FlexGrow1 {
+  flex-grow: 1;
+}
+
+.FlexGrow2 {
+  flex-grow: 2;
+}
+
+.Text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: var(--c-opposite-1);
+}
+
+.Caption {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  color: var(--c-opposite-3);
+}
+
+.ColorOk1 {
+  color: var(--c-ok-1);
+}
+
+.ColorCritical1 {
+  color: var(--c-critical-1);
+}

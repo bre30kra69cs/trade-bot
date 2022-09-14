@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 
-import {Orderbook} from './Orderbook';
+import {Board} from './Board';
 
 export const App: FC = () => {
-  return <Orderbook />;
+  return <Board />;
 };

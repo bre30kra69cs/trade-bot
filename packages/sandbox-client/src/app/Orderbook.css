@@ -1,0 +1,42 @@
+.OrderbookContent {
+  position: relative;
+  background-color: var(--c-primary-2);
+  height: 50vh;
+  width: 30vw;
+  overflow: hidden;
+}
+
+.OrderbookHeader {
+  position: relative;
+  height: 32px;
+}
+
+.OrderbookSide {
+  overflow: auto;
+  flex-basis: 1px;
+}
+
+.OrderbookNode {
+  position: relative;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.OrderbookNode:hover {
+  cursor: pointer;
+  background-color: var(--c-primary-1);
+}
+
+.OrderbookPrice {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.OrderbookAmount {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}

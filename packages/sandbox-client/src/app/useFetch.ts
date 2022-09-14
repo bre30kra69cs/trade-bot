@@ -1,28 +1,19 @@
-import useSWR, {SWRConfiguration, Fetcher, Key} from 'swr';
+import useSWR, {SWRConfiguration, Fetcher} from 'swr';
 
-import {Res} from './swr.types';
+import {fetcher} from './fetcher';
 
 export const useFetch = <Data = any, Error = any>(
   key: string,
-  config: SWRConfiguration<Data, Error, Fetcher<Data, string>> | undefined,
-): Res<Data, Error> => {
-  const {data, error} = useSWR<Data, Error, string>(key, config);
+  config: Omit<
+    SWRConfiguration<Data, Error, Fetcher<Data, string>>,
+    'fetcher' | 'suspense'
+  > = {},
+): Data => {
+  const {data} = useSWR<Data, Error, string>(key, {
+    ...config,
+    suspense: true,
+    fetcher: fetcher.get,
+  });
 
-  if (error) {
-    return {
-      type: 'fail',
-      error: error,
-    };
-  }
-
-  if (data) {
-    return {
-      type: 'ok',
-      data: data,
-    };
-  }
-
-  return {
-    type: 'pending',
-  };
+  return data!;
 };
