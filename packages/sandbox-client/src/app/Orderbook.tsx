@@ -1,17 +1,21 @@
 import React, {Suspense, FC} from 'react';
 
 import {useOrderbook} from './useOrderbook';
+import {useOrderbookSpread} from './useOrderbookSpread';
 import {Loader} from './Loader';
+import {Catcher} from './Catcher';
+import {Failer} from './Failer';
 
 import './Orderbook.css';
 
 const OrderbookContent: FC = () => {
-  const data = useOrderbook();
+  const orderbook = useOrderbook();
+  const [spread, precent] = useOrderbookSpread();
 
   return (
     <>
       <section className="ColReverse FlexGrow1 OrderbookSide">
-        {data.asks.map((ask) => {
+        {orderbook.asks.map((ask) => {
           return (
             <section key={ask[0]} className="Row OrderbookNode">
               <span className="OrderbookPrice Text ColorCritical1">
@@ -22,8 +26,13 @@ const OrderbookContent: FC = () => {
           );
         })}
       </section>
+      <section className="Row OrderbookSpread">
+        <span className="OrderbookSpreadPrice Text">{spread}</span>
+        <span className="OrderbookSpreadTitle Text">Spread</span>
+        <span className="OrderbookSpreadPercent Text">{precent}%</span>
+      </section>
       <section className="Col FlexGrow1 OrderbookSide">
-        {data.bids.map((bid) => {
+        {orderbook.bids.map((bid) => {
           return (
             <section key={bid[0]} className="Row OrderbookNode">
               <span className="OrderbookPrice Text ColorOk1">{bid[0]}</span>
@@ -44,9 +53,11 @@ export const Orderbook: FC = () => {
         <span className="OrderbookAmount Caption">Amount</span>
       </header>
       <main className="Col OrderbookContent">
-        <Suspense fallback={<Loader />}>
-          <OrderbookContent />
-        </Suspense>
+        <Catcher fallback={<Failer />}>
+          <Suspense fallback={<Loader />}>
+            <OrderbookContent />
+          </Suspense>
+        </Catcher>
       </main>
     </article>
   );

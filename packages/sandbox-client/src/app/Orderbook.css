@@ -1,9 +1,11 @@
 .OrderbookContent {
   position: relative;
-  background-color: var(--c-primary-2);
   height: 50vh;
   width: 30vw;
+  border-radius: 8px;
   overflow: hidden;
+  background-color: var(--c-primary-2);
+  isolation: isolate;
 }
 
 .OrderbookHeader {
@@ -18,7 +20,7 @@
 
 .OrderbookNode {
   position: relative;
-  height: 20px;
+  height: 16px;
   flex-shrink: 0;
 }
 
@@ -35,6 +37,33 @@
 }
 
 .OrderbookAmount {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.OrderbookSpread {
+  position: relative;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.OrderbookSpreadPrice {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.OrderbookSpreadTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.OrderbookSpreadPercent {
   position: absolute;
   right: 8px;
   top: 50%;
