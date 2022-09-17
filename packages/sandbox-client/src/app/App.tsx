@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 
-import {Board} from './Board';
+import {Router} from './Router';
 
 export const App: FC = () => {
-  return <Board />;
+  return <Router />;
 };

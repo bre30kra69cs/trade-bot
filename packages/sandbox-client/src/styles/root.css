@@ -11,3 +11,10 @@
   --c-ok-1: #35b049;
   --c-critical-1: #ba1c1c;
 }
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--c-opposite-3);
+}

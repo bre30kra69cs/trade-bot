@@ -18,6 +18,14 @@
   justify-content: flex-start;
 }
 
+.FlexAlignCenter {
+  align-items: center;
+}
+
+.FlexJustifyBetween {
+  justify-content: space-between;
+}
+
 .FlexCenter {
   align-items: center;
   justify-content: center;
@@ -43,10 +51,24 @@
   color: var(--c-opposite-3);
 }
 
+.Title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: var(--c-opposite-1);
+}
+
 .ColorOk1 {
   color: var(--c-ok-1);
 }
 
 .ColorCritical1 {
   color: var(--c-critical-1);
+}
+
+.ColorPrimary1 {
+  color: var(--c-primary-1);
+}
+
+.ColorPrimary2 {
+  color: var(--c-primary-2);
 }

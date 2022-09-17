@@ -1,0 +1,6 @@
+.Footer {
+  height: 32px;
+  padding: 0 16px;
+  background-color: var(--c-opposite-3);
+  gap: 16px;
+}
