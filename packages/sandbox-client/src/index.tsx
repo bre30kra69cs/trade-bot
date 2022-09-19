@@ -3,9 +3,7 @@ import {createRoot} from 'react-dom/client';
 
 import {App} from './app/App';
 
-import './styles/reset.css';
-import './styles/utils.css';
-import './styles/root.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);

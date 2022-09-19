@@ -4,10 +4,8 @@ import {Layout} from './Layout';
 
 export const NotFoundPage: FC = () => {
   return (
-    <Layout>
-      <article className="Col FlexGrow1 FlexCenter">
-        <span className="Text">Not Found 404</span>
-      </article>
+    <Layout className="align-items-center justify-content-center text-center">
+      <span>Not Found 404</span>
     </Layout>
   );
 };
